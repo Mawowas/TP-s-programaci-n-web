@@ -4,4 +4,35 @@ body{
 
 div{
     padding: 5px;
+} 
+
+
+/* Estilo específico cuando la tarea es PENDIENTE */
+#lista li.pendiente {
+    border-left: 4px solid #f39c12; /* Borde naranja de advertencia/pendiente */
+}
+
+/* Estilo específico cuando la tarea está COMPLETADA */
+#lista li.completada {
+    border-left: 4px solid #2ecc71; /* Borde verde */
+    text-decoration: line-through;
+    color: #888888;
+    opacity: 0.7;
+}
+
+#lista li {
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    list-style: none;
+}
+
+#lista li img {
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
