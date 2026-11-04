@@ -11,20 +11,18 @@ const btnPendiente = document.getElementById("agregar-completada");
 // Lista
 const lista = document.getElementById("lista");
 
-// Array principal de tareas (guardaremos objetos para tener el texto y el estado)
+// Array principal de tareas
 let tareas = [];
 
-// Función para renderizar la lista en el DOM
 function actualizarVista() {
     lista.innerHTML = ""; 
 
     tareas.forEach((tarea) => {
         const li = document.createElement('li');
         
-        // Creamos el elemento de imagen
+        // esto es para que se cree el icono de estado
         const icono = document.createElement('img');
 
-        // Evaluamos el estado para asignar la imagen y la clase CSS (¡sin .style aquí!)
         if (tarea.completada) {
             li.classList.add('completada');
             icono.src = 'imagenes/comprobado.png';
@@ -35,7 +33,6 @@ function actualizarVista() {
             icono.alt = 'Pendiente';
         }
 
-        // Creamos el texto y armamos el elemento
         const textoSpan = document.createElement('span');
         textoSpan.textContent = tarea.texto;
 
@@ -45,7 +42,7 @@ function actualizarVista() {
     });
 }
 
-// 1. Agregar nueva tarea (Por defecto nace como pendiente)
+// 1. Agregar nueva tarea
 function agregarTarea() {
     const texto = iTarea.value.trim();
     if (texto === '') return;
@@ -59,7 +56,7 @@ function agregarTarea() {
     console.log("Array de tareas actual:", tareas);
 }
 
-// 2. Marcar tarea como completada desde el segundo input
+// Marcar tarea como completada
 function marcarComoCompletada() {
     const textoBuscado = iCompletada.value.trim().toLowerCase();
     if (textoBuscado === '') return;
@@ -83,11 +80,11 @@ function marcarComoCompletada() {
 boton.addEventListener('click', agregarTarea);
 btnPendiente.addEventListener('click', marcarComoCompletada);
 
-// Opcional: Permitir presionar "Enter" en los inputs
-iTarea.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') agregarTarea();
-});
+// // Opcional: Permitir presionar "Enter" en los inputs
+// iTarea.addEventListener('keypress', (e) => {
+//     if (e.key === 'Enter') agregarTarea();
+// });
 
-iCompletada.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') marcarComoCompletada();
-});
+// iCompletada.addEventListener('keypress', (e) => {
+//     if (e.key === 'Enter') marcarComoCompletada();
+// });
