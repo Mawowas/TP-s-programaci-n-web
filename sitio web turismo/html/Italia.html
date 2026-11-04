@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo en Italia</title>
+    <!-- Ruta corregida para enlazar el CSS desde la carpeta html -->
+    <link rel="stylesheet" href="../css/paises.css">
+</head>
+<body>
+
+    <header class="header-detalle">
+        <a href="../index.html" class="btn-volver">← Volver al inicio</a>
+        <h1>Turismo en Italia</h1>
+    </header>
+
+    <!-- Sección del Carrusel Turístico -->
+    <main class="carousel-container">
+        <div class="carousel-slide">
+            <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+            
+            <div class="carousel-content">
+                <img id="carousel-img" src="" alt="Lugar turístico">
+                <div class="carousel-text">
+                    <h2 id="carousel-title"></h2>
+                    <p id="carousel-desc"></p>
+                </div>
+            </div>
+
+            <button class="carousel-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </main>
+<script src="../js/paises.js"></script>
+</body>
+</html>
